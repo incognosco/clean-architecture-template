@@ -5,7 +5,13 @@ import HelloWorld from './presentation/components/HelloWorld.vue'
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/presentation/assets/logo.svg" width="125" height="125" />
+    <img
+      alt="Vue logo"
+      class="logo"
+      src="@/presentation/assets/logo.svg"
+      width="125"
+      height="125"
+    />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
@@ -13,6 +19,9 @@ import HelloWorld from './presentation/components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/counter">Counter</RouterLink>
+        <RouterLink to="/post">Post</RouterLink>
+
       </nav>
     </div>
   </header>

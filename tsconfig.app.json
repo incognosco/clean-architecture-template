@@ -1,6 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "shims-vue.d.ts", "src/presentation/**/*", "src/presentation/**/*.vue"],
+  "include": ["env.d.ts", "shims-vue.d.ts", "src/framework/typings/List.d.ts", "src/framework/typings/PaginationRequest.d.ts",  "src/presentation/**/*", "src/presentation/**/*.vue"],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,

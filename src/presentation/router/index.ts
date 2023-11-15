@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
-
 // use the pattern described in this repo
 // https://github.com/Angellewis/OnionArchitechtureClient/blob/main/src/router/index.ts
 
@@ -20,6 +19,23 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/counter',
+      name: 'counter',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/CounterView.vue')
+    }
+    ,
+    {
+      path: '/post',
+      name: 'post',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/PostView.vue')
     }
   ]
 })
