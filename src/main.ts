@@ -1,10 +1,15 @@
 import '@/presentation/assets/main.css'
+import 'reflect-metadata'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { AppComponent } from './framework/ioc/AppComponents'
 
 import App from './App.vue'
 import router from './presentation/router'
+
+
+AppComponent.init()
 
 const app = createApp(App)
 

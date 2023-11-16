@@ -13,7 +13,7 @@ export class UserDataApiRepository implements UserDataRepositoryInterface {
     this.mapper = mapper
   }
 
-  public async getAllUser(): Promise<User> {
+  public async getRandomUser(): Promise<User> {
     const dataResponse = await this.service.invoke('get', Endpoints.Route.USER_DATA)
     return this.mapper.convertUserDataFromApi(dataResponse)
   }

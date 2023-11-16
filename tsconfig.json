@@ -14,7 +14,7 @@
   "compilerOptions": {
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitAny": false
-
+    "noImplicitAny": false,
+    "sourceMap": true
   }
 }

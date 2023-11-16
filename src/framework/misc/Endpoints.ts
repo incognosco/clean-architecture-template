@@ -1,8 +1,8 @@
 export class Endpoints {
-  public static baseUrl = import.meta.env.VITE_BASE_URL
+  public static baseUrl = import.meta.env.VITE_API_URL
 
   // tslint:disable-next-line: max-classes-per-file
   public static Route = class {
-    public static USER_DATA = '/learning'
+    public static USER_DATA = '/users'
   }
 }

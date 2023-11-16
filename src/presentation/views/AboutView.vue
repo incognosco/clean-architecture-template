@@ -13,6 +13,6 @@
   }
 }
 </style>
-<script setup>
+<script setup lang="ts">       
     const env = import.meta.env.VITE_BASE_URL;
 </script>

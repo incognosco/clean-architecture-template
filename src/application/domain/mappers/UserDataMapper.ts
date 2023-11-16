@@ -1,5 +1,5 @@
 import { BaseResponseMapper } from './Base'
-import { User, UserData } from '@/application/domain/entities/UserData'
+import { User} from '@/application/domain/entities/UserData'
 import { type AxiosResponse } from 'axios'
 
 export class UserDataMapper extends BaseResponseMapper {
@@ -8,14 +8,7 @@ export class UserDataMapper extends BaseResponseMapper {
     return new User(
       data.success,
       data.message,
-      data.data.map(
-        (val: any) =>
-          new UserData(
-            val.id,
-            val.name,
-            val.age
-          )
-      )
+      data.data
     )
   }
 }

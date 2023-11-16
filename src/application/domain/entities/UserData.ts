@@ -1,16 +1,13 @@
 export class UserData {
   private id: number
-  private name: string
-  private age: number
+  private isRegistered: boolean
 
   constructor(
     id: number,
-    name: string,
-    age: number
+    isRegistered: boolean
   ) {
     this.id = id
-    this.name = name
-    this.age = age
+    this.isRegistered = isRegistered
   }
 }
 

@@ -2,8 +2,12 @@ import { injectable } from 'tsyringe'
 import { UserDataApiRepository } from '@/infrastructure/repositories/UserApiRepository'
 import { User } from '@/application/domain/entities/UserData'
 
+interface UserDataPresenterInterface {
+  loadUserData(): Promise<User>
+}
+
 @injectable()
-export class UserDataPresenter {
+export class UserDataPresenter implements UserDataPresenterInterface {
   private repository: UserDataApiRepository
 
   constructor(repository: UserDataApiRepository) {
@@ -11,6 +15,6 @@ export class UserDataPresenter {
   }
 
   public loadUserData(): Promise<User> {
-    return this.repository.getAllUser()
+    return this.repository.getRandomUser()
   }
 }
