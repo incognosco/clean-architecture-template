@@ -20,6 +20,7 @@ export default class LoadPostsUseCase implements BaseUseCase {
     try {
       return await this.postRepository.getItems()
     } catch(e) {
+      console.error("EEEEEEEEEEEEEEEEERRRRRRRRRRRRRRRRRRRRRRRRRROOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRR");
       await this.errorService.handle(e)
     }
     return

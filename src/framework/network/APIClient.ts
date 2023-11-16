@@ -16,7 +16,9 @@ export class APIClient implements NetworkClient {
   static shared = new APIClient();
 
   // Base fqdn for api endpoints
-  baseURL: string = 'https://my-json-server.typicode.com';
+  baseURL: string = 'https://api.publicapis.org';
+  //'https://api.publicapis.org';
+  //
   // Timeout duration
   timeout: number = 15 * 1000;
 
@@ -36,6 +38,7 @@ export class APIClient implements NetworkClient {
           headers: this.createHeaders()
         })
         .then(data => {
+          console.log(data)
           const response = request.parse
             ? request.parse(data)
             : this.parse<U>(data);

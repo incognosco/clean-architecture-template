@@ -5,7 +5,7 @@ type HttpMethod = 'GET'
 
 export const invoke = <R>(url: string, method: HttpMethod) => {
   const config: AxiosRequestConfig = {
-    baseURL: 'https://my-json-server.typicode.com',
+    baseURL: 'http://localhost:5017',
     url,
     method,
     timeout: 13000

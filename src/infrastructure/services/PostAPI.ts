@@ -9,10 +9,11 @@ import { IPost } from '../../domain/model/Post';
 export namespace PostAPI {
   // List products
   export class GetPosts implements APIRequest<APIResponse<IPost>> {
-    response: IPost;
-    path = '/typicode/demo/post';
+    response: APIResponse<IPost>;
+    path = '/entries'
+    //'/typicode/demo/comments'; 
     method = HTTPMethod.GET;
-    parse = (data: AxiosResponse) => data.data
+    parse = (data: AxiosResponse) => data.data.entries
   }
 
 }

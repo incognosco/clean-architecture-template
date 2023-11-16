@@ -7,7 +7,7 @@ export interface IErrorService {
 export default class ErrorService implements BaseService {
   context: any
 
-  constructor({context = 'hoge'}: IErrorService) {
+  constructor({context = 'error'}: IErrorService) {
     this.context = context
   }
 

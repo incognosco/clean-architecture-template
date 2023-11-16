@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import fetchCount from '../../../infrastructure/services/fetchCount'
+import PostPresenter from '../../../infrastructure/services/PostPresenter'
 import ControlBar from './ControlBar.vue'
 
 
@@ -18,6 +19,8 @@ const count = ref<number | null>(null)
 
 onMounted(() => {
   fetchCount((initialCount) => {
+    const postPres = new PostPresenter().getForecast()
+    console.log(postPres)
     count.value = initialCount
   })
 })
