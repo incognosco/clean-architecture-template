@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h1>This page is hosted on {{ env }}</h1>
   </div>
 </template>
 
@@ -13,3 +13,6 @@
   }
 }
 </style>
+<script setup>
+    const env = import.meta.env.VITE_BASE_URL;
+</script>
