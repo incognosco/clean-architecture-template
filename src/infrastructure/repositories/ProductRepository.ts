@@ -1,8 +1,8 @@
 import {inject, injectable} from 'tsyringe'
 import type {ProductResponse} from '@/application/domain/entities/Product'
 import type {ProductRepositoryInterface} from '@/application/domain/contracts/ProductRepositoryInterface'
-import ApiService from '@/framework/services/ApiServices'
-import { Endpoints } from '@/framework/misc/Endpoints'
+import ApiService from '@/infrastructure/services/ApiServices'
+import { Endpoints } from '@/presentation/router/Endpoints'
 
 @injectable()
 export class ProductRepository implements ProductRepositoryInterface {

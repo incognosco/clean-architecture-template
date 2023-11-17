@@ -1,5 +1,5 @@
 import { type DependencyContainer } from 'tsyringe'
-import ApiService from '../services/ApiServices'
+import ApiService from '../../infrastructure/services/ApiServices'
 
 export class RootModule {
   public static init(container: DependencyContainer) {

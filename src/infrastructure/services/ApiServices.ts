@@ -1,8 +1,8 @@
 import Axios,  { type AxiosInstance, type Method, type AxiosResponse } from 'axios'
 import qs from 'qs'
 import { injectable } from 'tsyringe';
-import { Endpoints } from '@/framework/misc/Endpoints'
-import { getToken } from '@/framework/utils/cookies'
+import { Endpoints } from '@/presentation/router/Endpoints'
+import { getToken } from '@/infrastructure/services/cookies'
 
 @injectable()
 export default class ApiService {

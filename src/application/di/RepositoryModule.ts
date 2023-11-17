@@ -1,7 +1,7 @@
 import { type DependencyContainer } from 'tsyringe'
 //import { UserDataMapper } from '@/application/domain/mappers/UserDataMapper'
 import { ProductRepository } from '@/infrastructure/repositories/ProductRepository'
-import ApiService from '../services/ApiServices'
+import ApiService from '../../infrastructure/services/ApiServices'
 import { type ProductRepositoryInterface } from '@/application/domain/contracts/ProductRepositoryInterface'
 
 

@@ -3,11 +3,18 @@ export interface Product {
     title: string
     description: string
     price: number
-}
-
-export interface ProductResponse {
+    discountPercentage: number
+    rating: number
+    stock: number
+    brand: string
+    category: string
+    thumbnail: string
+    images: string[]
+  }
+  
+  export interface ProductResponse {
     products: Array<Product>
     skip: number
     total: number
-    limit: number    
-}
+    limit: number
+  }

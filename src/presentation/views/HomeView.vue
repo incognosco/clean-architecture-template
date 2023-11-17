@@ -32,4 +32,4 @@ onMounted(async () => {
       </div>
     </div>
   </div>
-</template>
+</template>@/application/controllers/ProductController
