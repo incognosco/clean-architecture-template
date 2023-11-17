@@ -3,6 +3,6 @@ export class Endpoints {
 
   // tslint:disable-next-line: max-classes-per-file
   public static Route = class {
-    public static USER_DATA = '/users'
+    public static PRODUCT_DATA = '/products'
   }
 }

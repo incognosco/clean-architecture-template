@@ -1,16 +1,17 @@
 import { type DependencyContainer } from 'tsyringe'
-import { UserDataMapper } from '@/application/domain/mappers/UserDataMapper'
-import { UserDataApiRepository } from '@/infrastructure/repositories/UserApiRepository'
+//import { UserDataMapper } from '@/application/domain/mappers/UserDataMapper'
+import { ProductRepository } from '@/infrastructure/repositories/ProductRepository'
 import ApiService from '../services/ApiServices'
+import { type ProductRepositoryInterface } from '@/application/domain/contracts/ProductRepositoryInterface'
+
 
 
 export class RepositoryModule {
   public static init(container: DependencyContainer) {
-    container.register<UserDataApiRepository>(UserDataApiRepository, {
+    container.register<ProductRepositoryInterface>(ProductRepository, {
       useFactory: (d) => {
-        return new UserDataApiRepository(
-          d.resolve(ApiService),
-          d.resolve(UserDataMapper)
+        return new ProductRepository(
+          d.resolve(ApiService)
         )
       },
     })
