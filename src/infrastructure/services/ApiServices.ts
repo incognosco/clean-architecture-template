@@ -3,6 +3,7 @@ import qs from 'qs'
 import { injectable } from 'tsyringe';
 import { Endpoints } from '@/presentation/router/Endpoints'
 import { getToken } from '@/infrastructure/services/cookies'
+import { ApiResponse } from '@/application/domain/entities/ApiResponse';
 
 @injectable()
 export default class ApiService {
@@ -67,5 +68,11 @@ export default class ApiService {
       data: payload ? payload.toJSON() : null,
       method,
     })
+  }
+  public success<T> (data: T) {
+    return new ApiResponse(true, "Successful", data)
+  }
+  public failure() {
+    return new ApiResponse(false, "Error", null)
   }
 }

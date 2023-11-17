@@ -1,29 +1,29 @@
 import { defineStore } from 'pinia'
 import { container } from 'tsyringe'
-import { computed, reactive } from 'vue'
+import { computed, reactive, ref } from 'vue'
 
-import { type Product } from '@/application/domain/entities/Product'
-import { ProductRepository } from '@/infrastructure/repositories/ProductRepository'
+import { GetProductUsecase } from '@/application/usecases/GetProductUsecase'
 
-interface productState {
-  products: Array<Product>
+interface productState  {
   isLoading: boolean
 }
 
 export const useProductStore = defineStore('products', () => {
   const state = reactive<productState>({
-    isLoading: true,
-    products: []
+    isLoading: true
   })
-  const productRepository = container.resolve(ProductRepository)
-  const productLength = computed(() => state.products.length)
-  const productList = computed(() => state.products)
+
+  const products = ref()
+
+  const productLength = computed(() => products.value.length)
+  const productList = computed(() => products.value)
   const isLoading = computed(() => state.isLoading)
 
-  const getData = async () => {
+  const getData = async (num: number) => {
     state.isLoading = true
-    const data = await productRepository.getProductData(10)
-    state.products = data.products
+    const productUsecase = container.resolve(GetProductUsecase)
+    const resp = await productUsecase.execute(num)
+    products.value = resp?.products
     state.isLoading = false
   }
 
