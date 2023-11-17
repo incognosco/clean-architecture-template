@@ -3,14 +3,14 @@ import {type  BaseServiceInterface} from '../contracts/BaseServiceInterface'
 
 @injectable()
 export default class ErrorService implements BaseServiceInterface {
-    context: any
+    
 
     constructor() {
-      this.context = ''
+    //  this.context = ''
     }
 
-    async handle(error: any) {
-        console.log(`error called in ${this.context}`)
+    async handle(context: string, error: any) {
+        console.log(`error called in ${context}`)
         console.log(error)
         return
       }

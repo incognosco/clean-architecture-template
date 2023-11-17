@@ -24,7 +24,7 @@ export class GetProductUsecase implements IGetProductUsecase {
         const resp = await productRepository.getProductData(num)
         return new GetProductUsecaseResponse(resp.data)
     } catch(e) {
-      await this.errorService.handle(e)
+      await this.errorService.handle('product user case', e)
     }
     return
   }

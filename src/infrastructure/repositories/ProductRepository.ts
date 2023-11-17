@@ -16,5 +16,4 @@ export class ProductRepository implements ProductRepositoryInterface {
         console.log(`Number ${num}`);
         return this.service.success(dataResponse.data.products);
     }
-
 }

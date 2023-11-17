@@ -1,4 +1,4 @@
   export interface BaseServiceInterface {
-    handle: (param?: any) => Promise<any>
-    context: any
+    handle: (context: any, param?: any) => Promise<any>
+    
   }
