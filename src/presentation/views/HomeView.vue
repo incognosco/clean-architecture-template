@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 
-import { useProductStore } from '@/presentation/controllers/ProductController'
+import { useProductUsecaseStore } from '@/presentation/controllers/ProductUsecaseController'
 
-const productStore = useProductStore()
+const productStore = useProductUsecaseStore()
 
 onMounted(async () => {
-  await productStore.getData(10)
+  await productStore.getData()
 })
 </script>
 

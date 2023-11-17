@@ -10,7 +10,7 @@ export class ProductRepository implements ProductRepositoryInterface {
         @inject('api') private service: ApiService, 
     ) {}
 
-    public async getProductData(num: number): Promise<ProductResponse> {
+    public async getProductData(num: number): Promise<Product> {
         const dataResponse = await this.service.invoke('get', Endpoints.Route.PRODUCT_DATA, num)
         console.log(`Number ${num}`);
         return dataResponse.data;
